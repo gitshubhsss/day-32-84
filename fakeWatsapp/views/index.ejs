@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fakewhatsapp</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>All chats</h1>
+    <% for (const chat of allChats) {%>
+       <div class="chats">
+        <p>from: <%= chat.from %></p>
+        <p class="message"> <%= chat.msg %></p>
+        <p>to : <%= chat.to %></p>
+        <hr>
+       <a href="/chats/<%= chat._id %>">see chat</a>
+       </div>
+       <br>
+       <br>
+     
+        <%} %>
+        <form  method="get" action="/chats/new">
+            <button>New chat</button>
+           </form>
+      
+</body>
+
+</html>
